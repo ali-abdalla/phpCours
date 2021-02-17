@@ -1,0 +1,9 @@
+{
+    "name": "Projet-php",
+    "description": "Projet",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    }
+}
