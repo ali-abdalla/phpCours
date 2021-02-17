@@ -8,9 +8,9 @@
     $controlleName= "App\Controller\\{$routeInfo['controller']}";
     
     
-    echo '<pre>'; var_dump($routeInfo);echo '</pre>';exit;
+    // echo '<pre>'; var_dump($routeInfo);echo '</pre>';exit;
 
     $controller = new $controlleName();
 
-    $controller -> {$routeInfo['method']}();
+    $controller -> {$routeInfo['method']}( ...$routeInfo['vars']);
 ?>
