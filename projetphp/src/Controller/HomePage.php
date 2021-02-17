@@ -3,11 +3,9 @@ namespace App\Controller;
  class HomePage extends AbstractController{
 
 
-    public function index(int $id): void
+    public function index(): void
     {
-        $this->render("homepage/index", [
-            "message" => $id,
-        ]);
+        $this->render("homepage/index");
     }
 
  }

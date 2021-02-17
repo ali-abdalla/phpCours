@@ -4,7 +4,7 @@ namespace App\Core;
 
 //permet de retrouver URL/route
 
-class routing {
+class Routing {
 
     private array $routes = [
         '/' => [
@@ -13,10 +13,10 @@ class routing {
         ],
         // pour les expressions rationelles : https://regex101.com/
         
-        '/(?<id>\d+)' => [
-            'controller' => 'HomePage',
-            'method' => 'index'
-        ]
+        // '/(?<id>\d+)' => [
+        //     'controller' => 'HomePage',
+        //     'method' => 'index'
+        // ]
     ];
 
     public function getRouteInfo():array
