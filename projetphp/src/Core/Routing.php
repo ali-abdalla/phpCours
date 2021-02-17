@@ -38,6 +38,12 @@ class routing {
             }
         }
 
+        foreach ($result['vars'] as $key => $value) {
+            if(is_int($key)){
+                unset($result['vars'][$key]);
+            }
+        }
+
         // if(array_key_exists($uri, $this->routes)){
         //     $result =$this->routes[$uri];
         // }
