@@ -16,6 +16,11 @@ DoteEnv::load();
     $userQuery = Container::getInstance(UserQuery::class);
 
 $jwt = Container::getInstance(Jwt::class);
+echo '<pre>';
+var_dump($jwt->verify('.eyJpYXQiOjE2MTM2NTYwNzZ9.MWI5ZjljNzkwZTNhNzlkNDBhNzkzYjIyZmUxZWM3YzgwOTgwNjIyMmMyZWNjMmNlMDJiOTNkMWJjNWViZmZlMQ'));
+echo '</pre>';
+exit;
+
 
     echo '<pre>'; var_dump($jwt->generate());echo '</pre>';exit;
 

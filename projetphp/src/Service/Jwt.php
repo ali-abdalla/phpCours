@@ -29,4 +29,17 @@ class Jwt
         $token ="$headerBase64.$playloadBase64.$signatureBase64";
         return $token;
     }
+    public function verify(String $token):bool
+    {
+        [$headerBase64, $playloadBase64,$signature]=explode('.',$token);
+        $signatureBase64 = StringUtils::base64url_encode(
+            hash_hmac(
+                'sha256',
+                "$headerBase64.$playloadBase64",
+                $_ENV['SECRET'],
+            )
+        );
+        $signaturebverify = $signatureBase64 === $signature;
+        return $signaturebverify;
+    }
 }
