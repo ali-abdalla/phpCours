@@ -6,6 +6,7 @@
     use App\Core\DoteEnv;
     use App\Core\Routing;
 use App\Query\UserQuery;
+use App\Service\Jwt;
 
 DoteEnv::load();
     $db =new Database();
@@ -14,7 +15,11 @@ DoteEnv::load();
     // echo '<pre>'; var_dump($_ENV);echo '</pre>';
     $userQuery = Container::getInstance(UserQuery::class);
 
-    echo '<pre>'; var_dump($userQuery->checkUser('adminx','admin') );echo '</pre>';exit;
+$jwt = Container::getInstance(Jwt::class);
+
+    echo '<pre>'; var_dump($jwt->generate());echo '</pre>';exit;
+
+    // echo '<pre>'; var_dump($userQuery->checkUser('adminx','admin') );echo '</pre>';exit;
 
     // $routing = new Routing();
     $routing= Container::getInstance(Routing::class);

@@ -6,6 +6,7 @@ use App\Controller\NotFound;
 use App\Model\User;
 use App\Controller\HomePage;
 use App\Query\UserQuery;
+use App\Service\Jwt;
 
 //permet de retrouver URL/route
 
@@ -36,6 +37,9 @@ class Container {
                 return new \App\Query\UserQuery(
                     self::getInstance(Database::class)
                 );
+            },
+            Jwt::class => function () {
+                return new \App\Service\Jwt();
             },
         ];
         return $instance[$namespace]();
