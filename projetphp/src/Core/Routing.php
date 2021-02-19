@@ -17,6 +17,10 @@ class Routing {
         //     'controller' => 'HomePage',
         //     'method' => 'index'
         // ]
+        '/auth' => [
+            'controller'=> 'Authentification',
+            'method'=>'index'
+        ]
     ];
 
     public function getRouteInfo():array

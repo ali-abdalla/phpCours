@@ -5,24 +5,24 @@
     use App\Core\Database;
     use App\Core\DoteEnv;
     use App\Core\Routing;
-use App\Query\UserQuery;
-use App\Service\Jwt;
+    use App\Query\UserQuery;
+    use App\Service\Jwt;
 
-DoteEnv::load();
+    DoteEnv::load();
     $db =new Database();
     // echo '<pre>'; var_dump($db->connect());echo '</pre>';
 
     // echo '<pre>'; var_dump($_ENV);echo '</pre>';
     $userQuery = Container::getInstance(UserQuery::class);
 
-$jwt = Container::getInstance(Jwt::class);
-echo '<pre>';
-var_dump($jwt->verify('.eyJpYXQiOjE2MTM2NTYwNzZ9.MWI5ZjljNzkwZTNhNzlkNDBhNzkzYjIyZmUxZWM3YzgwOTgwNjIyMmMyZWNjMmNlMDJiOTNkMWJjNWViZmZlMQ'));
-echo '</pre>';
-exit;
+    $jwt = Container::getInstance(Jwt::class);
+    // echo '<pre>';
+    // var_dump($jwt->verify('.eyJpYXQiOjE2MTM2NTYwNzZ9.MWI5ZjljNzkwZTNhNzlkNDBhNzkzYjIyZmUxZWM3YzgwOTgwNjIyMmMyZWNjMmNlMDJiOTNkMWJjNWViZmZlMQ'));
+    // echo '</pre>';
+    // exit;
 
 
-    echo '<pre>'; var_dump($jwt->generate());echo '</pre>';exit;
+    // echo '<pre>'; var_dump($jwt->generate());echo '</pre>';exit;
 
     // echo '<pre>'; var_dump($userQuery->checkUser('adminx','admin') );echo '</pre>';exit;
 

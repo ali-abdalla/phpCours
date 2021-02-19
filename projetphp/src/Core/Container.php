@@ -2,6 +2,7 @@
 
 namespace App\Core;
 
+use App\Controller\Authentification;
 use App\Controller\NotFound;
 use App\Model\User;
 use App\Controller\HomePage;
@@ -14,9 +15,9 @@ class Container {
 
     static public function getInstance(String $namespace){
         $instance = [
-            NotFound::class => function ()
+            Authentification::class => function ()
             { 
-                return new \App\Controller\NotFound(); 
+                return new \App\Controller\Authentification(); 
             },
             HomePage::class => function () {
                 return new \App\Controller\HomePage();
