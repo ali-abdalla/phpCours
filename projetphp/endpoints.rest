@@ -5,5 +5,4 @@ Content-Type: application/json
 "login" : "admin",
 "password" : "admin"
 }
-
-###
+# curl -d '{"login":"admin", "password":"admin"}' "Content-Type:application/json" -X POST http://localhost:8000/auth

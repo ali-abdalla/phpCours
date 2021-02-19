@@ -3,6 +3,7 @@
 namespace App\Query;
 
 use App\Core\Database;
+use App\Model\Product;
 use App\Model\User;
 use PDO;
 

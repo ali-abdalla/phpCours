@@ -20,7 +20,17 @@ class Routing {
         '/auth' => [
             'controller'=> 'Authentification',
             'method'=>'index'
-        ]
+        ],
+        '/product'=>[
+            'controller'=>'Product',
+            'method'=>'index'
+        ],
+
+
+        '/api/product' => [
+            'controller' => 'API\Product',
+            'method' => 'productquery'
+        ],
     ];
 
     public function getRouteInfo():array
