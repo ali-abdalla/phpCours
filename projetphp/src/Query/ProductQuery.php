@@ -39,4 +39,13 @@ class ProductQuery
         $results = $query->fetchAll(PDO::FETCH_CLASS, Product::class);
         return $results;
     }
+    public function insert(object $object): void
+    {
+        $sql = 'INSERT INTO api.product VALUE(NULL, :name);';
+        $query = $this->connexion->prepare($sql);
+        $query->execute([
+            'name' => $object->name,
+        ]);
+    }
+    
 }

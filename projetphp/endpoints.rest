@@ -6,3 +6,5 @@ Content-Type: application/json
 "password" : "admin"
 }
 # curl -d '{"login":"admin", "password":"admin"}' "Content-Type:application/json" -X POST http://localhost:8000/auth
+
+# curl -d '{"id":"null", "name":"xiaomi"}' "Content-Type:application/json" -X POST http://localhost:8001/api/product

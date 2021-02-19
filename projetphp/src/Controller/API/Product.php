@@ -16,7 +16,16 @@ class Product extends AbstractController{
 
     public function productquery()
     {
-        return $this->renderJson("aller", $this->productQuery->getAll(),200);
+        $method = $_SERVER['REQUEST_METHOD'];
+
+        if($method === 'GET'){
+            return $this->renderJson("aller", $this->productQuery->getAll(),200);
+        }elseif ($method === 'POST') {
+            $body = json_decode(file_get_contents('php://input'));
+            $this->productQuery->insert($body);
+
+            $this->renderJson('produit créé', [], 201);
+        }
     }
 }
 
